@@ -2,10 +2,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { HttpModule } from '@angular/http';
 import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
+import { HttpClientModule} from '@angular/common/http';
 
 import { MDBSpinningPreloader, MDBBootstrapModulesPro, ToastModule } from 'ng-uikit-pro-standard';
 import { NavigationComponent } from './webSiteComponents/navigation/navigation.component';
@@ -20,7 +21,11 @@ import { AddContactComponent } from './appComponents/add-contact/add-contact.com
 import { ManageCarsComponent } from './appComponents/manage-cars/manage-cars.component';
 import { ManageContactsComponent } from './appComponents/manage-contacts/manage-contacts.component';
 import { DashboardComponent } from './appComponents/dashboard/dashboard.component';
-import { CreateComponent } from './services/create/create.component';
+import { AppNavigationComponent } from './appComponents/app-navigation/app-navigation.component';
+import { AppFooterComponent } from './appComponents/app-footer/app-footer.component';
+import { RegisterComponent } from './authComponents/register/register.component';
+import { LoginComponent } from './authComponents/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -36,13 +41,17 @@ import { CreateComponent } from './services/create/create.component';
     ManageCarsComponent,
     ManageContactsComponent,
     DashboardComponent,
-    CreateComponent
+    AppNavigationComponent,
+    AppFooterComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     ToastModule.forRoot(),
     MDBBootstrapModulesPro.forRoot(),
     AgmCoreModule.forRoot({
