@@ -1,0 +1,58 @@
+
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { AgmCoreModule } from '@agm/core';
+import { AppComponent } from './app.component';
+
+import { MDBSpinningPreloader, MDBBootstrapModulesPro, ToastModule } from 'ng-uikit-pro-standard';
+import { NavigationComponent } from './webSiteComponents/navigation/navigation.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './webSiteComponents/home/home.component';
+import { JumbotronComponent } from './webSiteComponents/jumbotron/jumbotron.component';
+import { FeaturesComponent } from './webSiteComponents/features/features.component';
+import { ProjectsComponent } from './webSiteComponents/projects/projects.component';
+import { FooterComponent } from './webSiteComponents/footer/footer.component';
+import { AddCarComponent } from './appComponents/add-car/add-car.component';
+import { AddContactComponent } from './appComponents/add-contact/add-contact.component';
+import { ManageCarsComponent } from './appComponents/manage-cars/manage-cars.component';
+import { ManageContactsComponent } from './appComponents/manage-contacts/manage-contacts.component';
+import { DashboardComponent } from './appComponents/dashboard/dashboard.component';
+import { CreateComponent } from './services/create/create.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavigationComponent,
+    HomeComponent,
+    JumbotronComponent,
+    FeaturesComponent,
+    ProjectsComponent,
+    FooterComponent,
+    AddCarComponent,
+    AddContactComponent,
+    ManageCarsComponent,
+    ManageContactsComponent,
+    DashboardComponent,
+    CreateComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpModule,
+    ToastModule.forRoot(),
+    MDBBootstrapModulesPro.forRoot(),
+    AgmCoreModule.forRoot({
+      // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key
+      apiKey: 'Your_api_key'
+    }),
+    AppRoutingModule
+  ],
+  providers: [MDBSpinningPreloader],
+  bootstrap: [AppComponent],
+  schemas:      [ NO_ERRORS_SCHEMA ]
+})
+export class AppModule { }
